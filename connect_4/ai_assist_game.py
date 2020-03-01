@@ -5,28 +5,37 @@ Script to play tic tac toe game
 
 import sys
 from board import board
-from ai_player import player
+from ai_player import player, player_2
 import numpy as np
 import time
 
 b = board.Board()
 
-difficulty = int(sys.argv[1])
+difficulty1 = int(sys.argv[1])
+difficulty2 = int(sys.argv[2])
 
-bot = player.Player(difficulty)
-turn = False
+bot1 = player.Player(difficulty1)
+bot2 = player_2.Player(difficulty2)
+turn = True
 
 play_count = 0
 
 while True:
 	b.display_board()
 
+	if (play_count > 25):
+		bot1.set_depth(4)
+
 	if (turn): # Human's turn
+		move = bot1.get_move(b)
+
+		print "computer recommends: ", move
 		move = int(raw_input("Enter your move\n"))
 
 	else: # AI's turn
 		tic = time.time()
-		move = bot.get_move(b)
+		move = bot2.get_move(b)
+		#move = int(raw_input("Enter your move\n"))
 		toc = time.time() 
 		print "the bot choose: " , move
 		print "it took ", toc-tic, " seconds"
@@ -36,12 +45,12 @@ while True:
 	b.display_board()
 
 	if b.check_win(1):
-		print ("Player 0 won!")
+		print ("Player Red won!")
 		b.display_board(True)
 		exit()
 
 	elif b.check_win(-1):
-		print ("Player 1 won!")
+		print ("Player Blue won!")
 		b.display_board(True)
 		exit()
 

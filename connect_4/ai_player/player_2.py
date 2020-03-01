@@ -57,8 +57,6 @@ class Player(object):
 		if np.random.rand(1) > 1.8:
 			return np.random.choice(moves)
 
-		print move_values
-
 		best_ind = np.random.choice(np.argwhere(move_values == np.amax(move_values)).reshape(-1, ))
 
 		return moves[best_ind]
@@ -76,19 +74,19 @@ class Player(object):
 			val = 0
 
 			if (board.check_win(-1)):
-				val = -1
+				val = 1
 
 			elif (board.check_win(1)):
-				val = 1
+				val = -1
 
 			return val
 
 		elif (board.check_win(-1) or board.check_win(1)):
 			if board.check_win(1):
-				return 1
+				return -1
 
 			else:
-				return -1
+				return 1
 
 		else:
 			moves = self.get_available_moves(board.board)
@@ -102,7 +100,7 @@ class Player(object):
 				move_values.append(self.minimax(temp_board, maxi ^ True, depth_count + 1))
 
 			if maxi:
-				return 0.9 * max(move_values)
+				return max(move_values)
 
 			else:
 				return min(move_values)
