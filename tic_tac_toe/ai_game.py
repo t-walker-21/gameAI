@@ -27,9 +27,12 @@ while True:
 		
 		else:
 			move = bot.get_move(b) 
-			print "the bot choose: " , move
+		
+		print "the bot choose: " , move
 
 	b.place_piece(move)
+
+	b.display_board()
 
 	if b.check_win(1):
 		print ("Player 0 won!")

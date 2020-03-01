@@ -5,6 +5,7 @@ Board definition class
 
 import numpy as np
 import copy
+import cv2
 
 class Board(object):
 	def __init__(self):
@@ -75,10 +76,12 @@ class Board(object):
 
 	def display_board(self, over=False):
 
+		self.paint_board(over)
 		print (self.board)
 
 		if not over:
 			print ("Player " + str(int(self.turn)) + "'s turn")
+
 
 	def check_win(self, player):
 		"""
@@ -105,3 +108,24 @@ class Board(object):
 			return True
 
 		return False
+
+	def paint_board(self, over):
+		canvas = np.ones((100, 100, 3)) * 255
+
+		offsetx = 25
+		offsety = 25
+
+		mult = 15
+
+		for i in range(len(self.board)):
+			for j in range(len(self.board[0])):
+				if self.board[i][j] == 0:
+					continue
+				elif self.board[i][j] == 1:
+					canvas = cv2.circle(canvas, (int(j * mult + offsetx), int(i * mult + offsety)), 7, (0, 0, 200), -1)
+				else:
+					canvas = cv2.circle(canvas, (int(j * mult + offsetx), int(i * mult + offsety)), 7, (200, 0, 0), -1)
+
+
+		cv2.imshow("game", canvas)
+		cv2.waitKey(1 if not over else 0)
