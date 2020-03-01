@@ -15,6 +15,7 @@ while True:
 
 	b.place_piece(move)
 
+	b.display_board()
 	if b.check_win(1):
 		print "Player 0 won!"
 		b.display_board(True)
