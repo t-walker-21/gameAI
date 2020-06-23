@@ -166,6 +166,9 @@ def process_two(img, rect, model, debug=False):
 
 			cell_tensor = torch.Tensor(cell_tensor).float().view(1, 1, 28, 28)
 
+			if torch.cuda.is_available():
+				cell_tensor = cell_tensor.cuda()
+
 			board[y][x] = torch.argmax(model(cell_tensor)[0]).item()
 
 		x += 1

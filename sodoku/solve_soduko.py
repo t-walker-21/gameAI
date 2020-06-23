@@ -50,6 +50,9 @@ model = Net()
 model.load_state_dict(torch.load(args.weight_path, map_location=torch.device('cpu')))
 model.eval()
 
+if torch.cuda.is_available():
+	model.to('cuda')
+
 img = cv2.imread(args.image_path)
 
 cv2.imshow("input image", cv2.resize(img, (500, 500)))
