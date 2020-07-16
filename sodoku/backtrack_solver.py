@@ -89,6 +89,6 @@ def solve(arr, pos_x=0, pos_y=0, arr_size=9):
 					pos_x -= 1
 					pos_y = arr_size - 1
 
-	# At this point, no assignment from the domain, so reset the variable to unassigned (0) and backtrack
+	# At this point, no assignment from the domain satisfied the constraints, so reset the variable to unassigned (0) and backtrack
 	arr[pos_x][pos_y] = 0
 	return None
