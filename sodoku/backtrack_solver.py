@@ -12,7 +12,7 @@ def inner_square(arr, i, j):
 
 
 def check_constraint(arr):
-	""" Check alldif constraint"""
+	""" Check alldiff constraint"""
 
 	check = set()
 
