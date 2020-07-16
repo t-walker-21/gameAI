@@ -1,6 +1,6 @@
 """
 
-Function to implement Constraint Satisfication Problem backtracking algorithm
+Functions to implement Constraint Satisfication Problem backtracking algorithm
 
 --Tevon Walker
 """
