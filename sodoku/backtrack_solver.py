@@ -1,6 +1,4 @@
 import numpy as np
-import time
-import os
 
 def inner_square(arr, i, j):
 	"""Turn i, j coordinate into a grid"""
