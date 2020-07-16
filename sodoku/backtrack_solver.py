@@ -1,3 +1,10 @@
+"""
+
+Function to implement Constraint Satisfication Problem backtracking algorithm
+
+--Tevon Walker
+"""
+
 import numpy as np
 
 def inner_square(arr, i, j):
