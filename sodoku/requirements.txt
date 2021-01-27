@@ -33,7 +33,7 @@ constantly==15.1.0
 contextlib2==0.6.0.post1
 controller-manager==0.15.1
 controller-manager-msgs==0.15.1
-cryptography==2.1.4
+cryptography==3.2
 cv-bridge==1.13.0
 cycler==0.10.0
 Cython==0.29.21
