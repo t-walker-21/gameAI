@@ -275,7 +275,7 @@ soupsieve==1.9.5
 subprocess32==3.5.3
 tensorboard==2.1.0
 tensorboardX==1.9
-tensorflow==1.13.1
+tensorflow==2.4.0
 tensorflow-estimator==1.13.0
 tensorflow-tensorboard==1.5.1
 termcolor==1.1.0
