@@ -181,7 +181,7 @@ PyTweening==1.0.3
 pytz==2020.4
 PyWavelets==1.0.3
 pyxdg==0.25
-PyYAML==5.3.1
+PyYAML==5.4
 pyzmq==19.0.2
 qlearning4k==0.0.1
 qrcode==5.3
