@@ -75,7 +75,7 @@ grpcio==1.27.2
 gym==0.12.1
 -e git+https://github.com/erlerobot/gym-gazebo@ade82b627839f816c1f4be6cea77b56eb21abc81#egg=gym_gazebo
 h5py==2.10.0
-html5lib==0.9999999
+html5lib==0.999999999
 hyperlink==17.3.1
 idna==2.10
 image-geometry==1.13.0
