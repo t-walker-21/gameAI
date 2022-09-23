@@ -143,7 +143,7 @@ plyfile==0.7
 post==2019.4.13
 prometheus-client==0.8.0
 prompt-toolkit==1.0.18
-protobuf==3.11.3
+protobuf==3.18.3
 psutil==5.4.2
 ptyprocess==0.6.0
 public==2019.4.13
